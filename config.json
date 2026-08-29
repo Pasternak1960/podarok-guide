@@ -1,0 +1,14 @@
+{
+  "site_name": "ПодарокГид",
+  "site_url": "https://REPLACE-ME.example",
+  "description": "Идеи и подборки подарков на любой случай, бюджет и характер получателя",
+  "author": "ПодарокГид",
+  "aff_networks": {
+    "ozon": "https://ad.admitad.com/g/REPLACE_OZON_CAMPAIGN_ID/?ulp={url}",
+    "wb": "https://ad.admitad.com/g/REPLACE_WB_CAMPAIGN_ID/?ulp={url}"
+  },
+  "publish_per_run": 1,
+  "yandex_verification": "",
+  "google_verification": ""
+}
+
