@@ -81,6 +81,41 @@ def render_page(template, **kwargs):
     return template.safe_substitute(**kwargs)
 
 
+WORDS_RE = re.compile(r"\w+", re.UNICODE)
+TAGS_RE = re.compile(r"<[^>]+>")
+
+
+def reading_time_minutes(html_body):
+    text = TAGS_RE.sub(" ", html_body)
+    word_count = len(WORDS_RE.findall(text))
+    minutes = max(1, round(word_count / 200))
+    return minutes
+
+
+def pick_related(art, all_articles, count=3):
+    same_category = [a for a in all_articles
+                      if a["slug"] != art["slug"] and a["category"] == art["category"]]
+    others = [a for a in all_articles
+              if a["slug"] != art["slug"] and a["category"] != art["category"]]
+    return (same_category + others)[:count]
+
+
+def card_html(art):
+    search_blob = f'{art["title"]} {art["description"]} {art["category"]}'.lower()
+    return (
+        f'<article class="card" data-category="{art["category"]}" '
+        f'data-search="{search_blob}">'
+        f'<span class="tag">{art["category"]}</span>'
+        f'<h3><a href="{art["slug"]}/">{art["title"]}</a></h3>'
+        f'<p>{art["description"]}</p>'
+        f'<div class="card-footer">'
+        f'<span>⏱ {art["reading_time"]} мин чтения</span>'
+        f'<a class="read-more" href="{art["slug"]}/">Смотреть идеи →</a>'
+        f'</div>'
+        f'</article>'
+    )
+
+
 def build():
     cfg = load_config()
     with open(TEMPLATE_PATH, encoding="utf-8") as f:
@@ -120,6 +155,7 @@ def build():
                 "category": fm.get("category", ""),
                 "date": fm.get("date", ""),
                 "html": html_body,
+                "reading_time": reading_time_minutes(html_body),
             })
 
     articles.sort(key=lambda a: a["date"], reverse=True)
@@ -131,10 +167,30 @@ def build():
         page_dir = os.path.join(OUT_DIR, art["slug"])
         os.makedirs(page_dir, exist_ok=True)
         canonical = f'{cfg["site_url"].rstrip("/")}/{art["slug"]}/'
+
+        related = pick_related(art, articles)
+        related_html = ""
+        if related:
+            related_cards = "".join(card_html(r) for r in related)
+            related_html = (
+                f'<section class="related"><h2>Похожие подборки</h2>'
+                f'<div class="card-grid small">{related_cards}</div></section>'
+            )
+
+        breadcrumbs_html = (
+            f'<nav class="breadcrumbs"><a href="../">Главная</a> · '
+            f'<span>{art["category"]}</span></nav>'
+        )
+
         content_html = (
+            f'<div class="article-wrap">'
+            f'{breadcrumbs_html}'
             f'<h1>{art["title"]}</h1>'
-            f'<p class="meta">{art["date"]} · <span class="tag">{art["category"]}</span></p>'
+            f'<p class="meta">{art["date"]} · <span class="tag">{art["category"]}</span> '
+            f'· ⏱ {art["reading_time"]} мин чтения</p>'
             f'{art["html"]}'
+            f'{related_html}'
+            f'</div>'
         )
         page = render_page(
             template,
@@ -151,16 +207,26 @@ def build():
             f.write(page)
 
     # homepage
-    cards = []
-    for art in articles:
-        cards.append(
-            f'<li class="card"><h3><a href="{art["slug"]}/">{art["title"]}</a></h3>'
-            f'<p>{art["description"]}</p></li>'
-        )
+    categories = sorted({a["category"] for a in articles if a["category"]})
+    pills = ['<button class="filter-pill active" data-filter="all" type="button">Все</button>']
+    for cat in categories:
+        pills.append(f'<button class="filter-pill" data-filter="{cat}" type="button">{cat}</button>')
+
+    cards = [card_html(art) for art in articles]
+
     home_content = (
+        f'<section class="hero">'
         f'<h1>{cfg["site_name"]}</h1>'
         f'<p class="intro">{cfg["description"]}</p>'
-        f'<ul class="card-list">{"".join(cards)}</ul>'
+        f'<div class="hero-stats"><span>🎁 {len(articles)} подборок идей</span>'
+        f'<span>🔄 Обновляется каждую неделю</span></div>'
+        f'</section>'
+        f'<div class="toolbar">'
+        f'<div class="search-box"><input type="text" placeholder="Найти подборку идей..." aria-label="Поиск"></div>'
+        f'<div class="filter-pills">{"".join(pills)}</div>'
+        f'</div>'
+        f'<div class="card-grid" data-filterable>{"".join(cards)}</div>'
+        f'<p class="no-results">Ничего не найдено — попробуйте другой запрос или категорию.</p>'
     )
     home_page = render_page(
         template,
@@ -180,6 +246,8 @@ def build():
     about_dir = os.path.join(OUT_DIR, "o-sayte")
     os.makedirs(about_dir, exist_ok=True)
     about_content = (
+        '<div class="article-wrap">'
+        '<nav class="breadcrumbs"><a href="../">Главная</a> · <span>О сайте</span></nav>'
         "<h1>О сайте</h1>"
         f"<p>{cfg['site_name']} — сайт с подборками идей подарков на разные праздники, "
         "бюджеты и типы получателей. Мы не продаём товары напрямую: ссылки в статьях "
@@ -188,6 +256,7 @@ def build():
         "<p>Сайт может получать партнёрское вознаграждение с покупок, совершённых по "
         "ссылкам из наших статей. Это никак не влияет на итоговую цену товара для покупателя "
         "и не влияет на то, какие идеи мы рекомендуем.</p>"
+        '</div>'
     )
     about_page = render_page(
         template,
