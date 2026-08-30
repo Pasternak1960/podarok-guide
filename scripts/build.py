@@ -287,6 +287,13 @@ def build():
     with open(os.path.join(OUT_DIR, "robots.txt"), "w", encoding="utf-8") as f:
         f.write(f"User-agent: *\nAllow: /\nSitemap: {cfg['site_url']}/sitemap.xml\n")
 
+    # CNAME (кастомный домен для GitHub Pages) — обязателен в каждом деплое,
+    # иначе GitHub Pages сбросит привязку домена при следующей публикации.
+    site_host = urllib.parse.urlparse(cfg["site_url"]).netloc
+    if site_host and not site_host.endswith(".github.io"):
+        with open(os.path.join(OUT_DIR, "CNAME"), "w", encoding="utf-8") as f:
+            f.write(site_host + "\n")
+
     # rss.xml (простая лента)
     rss_items = []
     for a in articles[:20]:
