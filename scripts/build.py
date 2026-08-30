@@ -100,6 +100,8 @@ def build():
         verification_tags += f'<meta name="yandex-verification" content="{cfg["yandex_verification"]}">\n'
     if cfg.get("google_verification"):
         verification_tags += f'<meta name="google-site-verification" content="{cfg["google_verification"]}">\n'
+    if cfg.get("mitgo_verification"):
+        verification_tags += f'<meta name="mitgo-verification" content="{cfg["mitgo_verification"]}">\n'
 
     articles = []
     if os.path.isdir(CONTENT_DIR):
