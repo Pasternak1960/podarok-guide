@@ -10,14 +10,18 @@
 <meta property="og:description" content="$page_description">
 <meta property="og:type" content="website">
 <meta property="og:url" content="$canonical_url">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%81%3C/text%3E%3C/svg%3E">
 $verification_tags
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="$root_prefix/static/style.css">
 <link rel="alternate" type="application/rss+xml" title="$site_name" href="$root_prefix/rss.xml">
 </head>
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="logo" href="$root_prefix/">$site_name</a>
+    <a class="logo" href="$root_prefix/"><span class="logo-mark">🎁</span>$site_name</a>
     <nav>
       <a href="$root_prefix/">Главная</a>
       <a href="$root_prefix/o-sayte/">О сайте</a>
@@ -33,5 +37,55 @@ $content
     <p class="disclosure">Сайт содержит партнёрские ссылки на маркетплейсы (Ozon, Wildberries и др.). При переходе по ним и совершении покупки сайт может получать комиссионное вознаграждение — это не влияет на цену товара для вас.</p>
   </div>
 </footer>
+<button class="back-to-top" aria-label="Наверх" title="Наверх">↑</button>
+<script>
+(function(){
+  // Back to top button
+  var btn = document.querySelector('.back-to-top');
+  if (btn) {
+    window.addEventListener('scroll', function(){
+      btn.classList.toggle('visible', window.scrollY > 500);
+    });
+    btn.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+
+  // Homepage search + category filter
+  var grid = document.querySelector('.card-grid[data-filterable]');
+  if (grid) {
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+    var input = document.querySelector('.search-box input');
+    var pills = Array.prototype.slice.call(document.querySelectorAll('.filter-pill'));
+    var noResults = document.querySelector('.no-results');
+    var activeCategory = 'all';
+
+    function applyFilters(){
+      var q = (input && input.value || '').trim().toLowerCase();
+      var visibleCount = 0;
+      cards.forEach(function(card){
+        var cat = card.getAttribute('data-category');
+        var text = card.getAttribute('data-search') || '';
+        var matchesCategory = activeCategory === 'all' || cat === activeCategory;
+        var matchesQuery = !q || text.indexOf(q) !== -1;
+        var show = matchesCategory && matchesQuery;
+        card.style.display = show ? '' : 'none';
+        if (show) visibleCount++;
+      });
+      if (noResults) noResults.classList.toggle('visible', visibleCount === 0);
+    }
+
+    if (input) input.addEventListener('input', applyFilters);
+    pills.forEach(function(pill){
+      pill.addEventListener('click', function(){
+        pills.forEach(function(p){ p.classList.remove('active'); });
+        pill.classList.add('active');
+        activeCategory = pill.getAttribute('data-filter');
+        applyFilters();
+      });
+    });
+  }
+})();
+</script>
 </body>
 </html>
