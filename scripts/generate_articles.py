@@ -120,6 +120,22 @@ IDEAS = {
         "приятный вариант, чтобы порадовать близкого человека маленьким SPA дома."),
     "wall_art": ("Постер или картина в стильной раме", "постер в раме для интерьера",
         "хороший способ обновить интерьер и сделать подарок персональным по сюжету."),
+    "handbag_woman": ("Стильная женская сумка через плечо", "женская сумка через плечо",
+        "практичный и приятный подарок — если не уверены в цвете, берите чёрный или бежевый."),
+    "belt_cufflinks": ("Кожаный ремень или запонки", "кожаный ремень мужской подарочный",
+        "классический аксессуар, который легко подобрать даже без примерки."),
+    "kids_book_set": ("Набор детских книг с иллюстрациями", "детские книги набор подарочный",
+        "хороший подарок для малышей — развивает речь и любовь к чтению с раннего возраста."),
+    "business_pen_set": ("Подарочный набор: ручка и визитница", "подарочный набор ручка визитница",
+        "сдержанный деловой подарок, уместный даже для формальных отношений."),
+    "flower_box": ("Стабилизированные цветы в коробке (стоят до года)", "стабилизированные цветы в коробке",
+        "красивая альтернатива обычному букету — не завянет через несколько дней."),
+    "newborn_set": ("Подарочный набор для новорождённого (боди, полотенце, конверт)", "набор для новорожденного подарочный",
+        "практичный набор, который точно пригодится в первые месяцы жизни малыша."),
+    "maternity_set": ("Уходовый набор для будущей мамы (крем от растяжек, косметика)", "набор для беременных уходовый",
+        "заботливый подарок, который помогает будущей маме чувствовать себя комфортнее."),
+    "wine_glasses_set": ("Набор бокалов для вина или графин", "набор бокалов для вина подарочный",
+        "красивый и универсальный подарок для тех, кто любит принимать гостей."),
 }
 
 
@@ -207,7 +223,7 @@ ARTICLES = [
          title="Что подарить на 23 февраля: 16 идей для мужчин",
          description="Подборка подарков на 23 февраля: для коллег, друзей, папы, мужа или брата.",
          category="Праздники",
-         intro="23 февраля — повод порадовать не только военных, но и всех мужчин вокруг: коллег, друзей, "
+         intro="23 февраля — повод порадовать не только военных, но и всех мужчин вокруг: коллег, друзей,"
                "родственников. Вот идеи на любой бюджет.",
          keys=["thermo_mug","power_bank","tool_set","car_accessories","leather_wallet","grill_bbq",
                "gaming_accessory","portable_speaker","watch_classic","wireless_headphones",
@@ -387,6 +403,221 @@ ARTICLES = [
                "школьников и студентов на старте новой главы жизни.",
          keys=["backpack_school","backpack","power_bank","planner","wireless_headphones",
                "camera_instant","gift_certificate","watch_classic","book"]),
+    # ---------- QUEUE: расширение банка (масштабирование, 01.09.2026) ----------
+    dict(slug="podarki-muzhu-na-godovschinu-svadby", source="queue",
+         title="Подарки мужу на годовщину свадьбы: 15 идей",
+         description="Что подарить мужу на годовщину свадьбы — идеи для любого срока брака и бюджета.",
+         category="Мужчине",
+         intro="Годовщина свадьбы — хороший повод сделать мужу приятный и немного личный подарок. "
+               "Собрали идеи, которые подойдут и для первой годовщины, и для более солидной даты.",
+         keys=["watch_classic","leather_wallet","belt_cufflinks","wireless_headphones","photo_book",
+               "cocktail_set","portable_speaker","grill_bbq","gift_certificate"]),
+
+    dict(slug="podarki-zhene-na-godovschinu-svadby", source="queue",
+         title="Подарки жене на годовщину свадьбы: 15 идей",
+         description="Что подарить жене на годовщину свадьбы — романтичные и практичные идеи.",
+         category="Женщине",
+         intro="На годовщину свадьбы хочется напомнить жене, как много она значит. Вот идеи — от "
+               "романтичных мелочей до более серьёзных подарков.",
+         keys=["flower_box","perfume","handbag_woman","photo_book","cosmetics_set","wall_art",
+               "scented_bath_set","gift_certificate","makeup_mirror"]),
+
+    dict(slug="chto-podarit-na-yubiley-zhenschine-30-let", source="queue",
+         title="Что подарить женщине на юбилей 30 лет: 15 идей",
+         description="Идеи подарков женщине на юбилей 30 лет — стильные и запоминающиеся варианты.",
+         category="Женщине",
+         intro="30 лет — красивая дата, которую хочется отметить особенным подарком. Собрали идеи, "
+               "которые подойдут для этого юбилея.",
+         keys=["handbag_woman","perfume","smart_watch","photo_book","cosmetics_set","flower_box",
+               "wall_art","gift_certificate","wine_glasses_set"]),
+
+    dict(slug="chto-podarit-na-yubiley-zhenschine-40-let", source="queue",
+         title="Что подарить женщине на юбилей 40 лет: 15 идей",
+         description="Идеи подарков женщине на юбилей 40 лет — от статусных вещей до подарков-впечатлений.",
+         category="Женщине",
+         intro="40-летний юбилей — повод для по-настоящему тёплого и статусного подарка. Вот варианты "
+               "на разный бюджет.",
+         keys=["watch_classic","perfume","handbag_woman","photo_book","massager","flower_box",
+               "gift_certificate","wine_glasses_set","cosmetics_set"]),
+
+    dict(slug="chto-podarit-na-yubiley-muzhchine-40-let", source="queue",
+         title="Что подарить мужчине на юбилей 40 лет: 15 идей",
+         description="Идеи подарков мужчине на юбилей 40 лет — статусные и практичные варианты.",
+         category="Мужчине",
+         intro="40 лет — солидная дата для мужчины, и подарок хочется подобрать соответствующий. "
+               "Собрали идеи от классики до техники.",
+         keys=["watch_classic","leather_wallet","belt_cufflinks","grill_bbq","portable_speaker",
+               "smart_watch","cocktail_set","gift_certificate","tool_set"]),
+
+    dict(slug="chto-podarit-na-yubiley-muzhchine-50-let", source="queue",
+         title="Что подарить мужчине на юбилей 50 лет: 15 идей",
+         description="Идеи подарков мужчине на юбилей 50 лет — солидные и практичные варианты.",
+         category="Мужчине",
+         intro="Юбилей 50 лет — повод для подарка с характером. Вот идеи, которые подчеркнут статус "
+               "и учтут интересы именинника.",
+         keys=["watch_classic","leather_wallet","grill_bbq","massager","portable_speaker",
+               "photo_book","wine_glasses_set","gift_certificate","tool_set"]),
+
+    dict(slug="podarki-nachalniku", source="queue",
+         title="Подарки начальнику: 15 нейтральных и уместных идей",
+         description="Что подарить начальнику на день рождения или праздник — сдержанные деловые идеи.",
+         category="Коллеге",
+         intro="Подарок начальнику требует особого такта — важно остаться в рамках делового этикета. "
+               "Собрали нейтральные, но приятные варианты.",
+         keys=["business_pen_set","tea_coffee_set","wine_glasses_set","planner","gift_certificate",
+               "thermo_mug","wallet_card_holder","belt_cufflinks"]),
+
+    dict(slug="podarki-nachalnitse", source="queue",
+         title="Подарки начальнице: 15 идей в деловом стиле",
+         description="Что подарить начальнице на 8 марта или день рождения — сдержанные и приятные идеи.",
+         category="Коллеге",
+         intro="Для начальницы хочется найти подарок одновременно приятный и уместный. Вот идеи, "
+               "которые не выходят за рамки делового этикета.",
+         keys=["flower_box","business_pen_set","cosmetics_set","tea_coffee_set","gift_certificate",
+               "candle_set","makeup_mirror","planner"]),
+
+    dict(slug="podarki-uchitelyu-na-den-uchitelya", source="queue",
+         title="Подарки учителю на День учителя: 15 идей",
+         description="Что подарить учителю на 5 октября — уместные и не банальные идеи.",
+         category="Праздники",
+         intro="Учителю хочется подарить что-то не банальное, но при этом уместное. Собрали идеи, "
+               "которые подойдут и для класса в складчину, и для личного подарка.",
+         keys=["flower_box","business_pen_set","tea_coffee_set","planner","candle_set",
+               "gift_certificate","photo_book","wine_glasses_set"]),
+
+    dict(slug="chto-podarit-devochke-na-den-rozhdeniya-5-let", source="queue",
+         title="Что подарить девочке на день рождения 5 лет: 15 идей",
+         description="Идеи подарков девочке на 5 лет — развивающие игрушки и творческие наборы.",
+         category="Ребёнку",
+         intro="В 5 лет дети особенно любят яркие игрушки и творчество. Собрали идеи, которые понравятся "
+               "именно девочкам этого возраста.",
+         keys=["kids_creativity_set","kids_book_set","board_game_kids","night_light","puzzle_3d",
+               "kids_constructor","photo_frame_digital"]),
+
+    dict(slug="chto-podarit-malchiku-na-den-rozhdeniya-10-let", source="queue",
+         title="Что подарить мальчику на день рождения 10 лет: 15 идей",
+         description="Идеи подарков мальчику на 10 лет — гаджеты, конструкторы и активные игры.",
+         category="Ребёнку",
+         intro="В 10 лет дети уже тянутся к технике и активным играм, но конструкторы и настолки всё "
+               "ещё в почёте. Вот подборка идей.",
+         keys=["kids_scooter","gaming_accessory","kids_constructor","board_game_kids","camera_instant",
+               "puzzle_3d","backpack_school","kids_book_set"]),
+
+    dict(slug="podarki-teshche", source="queue",
+         title="Подарки тёще: 15 идей, чтобы точно угодить",
+         description="Что подарить тёще на день рождения или праздник — беспроигрышные идеи.",
+         category="Женщине",
+         intro="Подарок тёще — задача с особой ответственностью. Собрали идеи, которые обычно "
+               "воспринимаются тепло и без лишних вопросов.",
+         keys=["flower_box","tea_coffee_set","cosmetics_set","photo_book","houseplant_kit",
+               "scented_bath_set","candle_set"]),
+
+    dict(slug="podarki-svekrovi", source="queue",
+         title="Подарки свекрови: 15 душевных идей",
+         description="Что подарить свекрови на день рождения или 8 марта — тёплые и уместные идеи.",
+         category="Женщине",
+         intro="Для свекрови хочется подобрать подарок, который покажет уважение и внимание. Вот "
+               "идеи, которые редко разочаровывают.",
+         keys=["flower_box","tea_coffee_set","photo_book","houseplant_kit","aroma_diffuser",
+               "candle_set","scented_bath_set"]),
+
+    dict(slug="chto-podarit-na-den-materi", source="queue",
+         title="Что подарить на День матери: 15 трогательных идей",
+         description="Идеи подарков на День матери — для мамы, бабушки или жены-мамы.",
+         category="Праздники",
+         intro="День матери — хороший повод сказать спасибо словами и подарком. Собрали идеи, которые "
+               "подходят для мам любого возраста.",
+         keys=["photo_book","flower_box","blanket","tea_coffee_set","houseplant_kit","massager",
+               "scented_bath_set","photo_frame_digital"]),
+
+    dict(slug="podarki-do-2000-rublej", source="queue",
+         title="Подарки до 2000 рублей: 18 идей на разные случаи",
+         description="Что подарить в пределах 2000 рублей — удачные идеи для любого получателя.",
+         category="Бюджет",
+         intro="2000 рублей — бюджет, в котором уже есть простор для выбора. Собрали идеи, которые "
+               "выглядят продуманно и подойдут почти любому человеку.",
+         keys=["thermo_mug","candle_set","phone_case","sports_bottle","tea_coffee_set","planner",
+               "board_puzzle","wallet_card_holder","office_organizer","houseplant_kit"]),
+
+    dict(slug="podarki-do-5000-rublej", source="queue",
+         title="Подарки до 5000 рублей: 20 идей на все случаи",
+         description="Что подарить в пределах 5000 рублей — универсальные идеи для любого получателя.",
+         category="Бюджет",
+         intro="5000 рублей — комфортный бюджет для по-настоящему приятного подарка. Собрали идеи, "
+               "которые подойдут и для дня рождения, и для праздника.",
+         keys=["wireless_headphones","smart_watch","cosmetics_set","backpack","perfume","photo_book",
+               "portable_speaker","leather_wallet","kitchen_gadget","wine_glasses_set"]),
+
+    dict(slug="podarki-do-10000-rublej", source="queue",
+         title="Подарки до 10000 рублей: 15 идей для особого случая",
+         description="Что подарить в пределах 10000 рублей — идеи для юбилея, свадьбы или крупного праздника.",
+         category="Бюджет",
+         intro="10000 рублей — бюджет для по-настоящему запоминающегося подарка. Собрали идеи для "
+               "юбилеев, свадеб и других важных поводов.",
+         keys=["smart_watch","watch_classic","handbag_woman","portable_speaker","camera_instant",
+               "gaming_accessory","leather_wallet","wine_glasses_set"]),
+
+    dict(slug="podarki-na-rozhdenie-rebenka", source="queue",
+         title="Подарки на рождение ребёнка: 15 полезных идей",
+         description="Что подарить родителям новорождённого — практичные и трогательные идеи.",
+         category="Для дома",
+         intro="На рождение ребёнка принято дарить что-то практичное для малыша или приятное для "
+               "уставших родителей. Вот подборка идей.",
+         keys=["newborn_set","photo_book","kids_book_set","blanket","night_light","houseplant_kit",
+               "tea_coffee_set"]),
+
+    dict(slug="podarki-beremennoj", source="queue",
+         title="Подарки беременной: 15 заботливых идей",
+         description="Что подарить будущей маме — уходовые и практичные идеи для беременных.",
+         category="Женщине",
+         intro="Для будущей мамы хочется подобрать что-то заботливое и полезное. Собрали идеи, "
+               "которые пригодятся и до, и после родов.",
+         keys=["maternity_set","blanket","aroma_diffuser","photo_book","tea_coffee_set","massager",
+               "newborn_set"]),
+
+    dict(slug="podarki-luchshey-podruge", source="queue",
+         title="Подарки лучшей подруге: 15 идей", 
+         description="Что подарить лучшей подруге на день рождения — тёплые и весёлые идеи.",
+         category="Другу",
+         intro="Для лучшей подруги хочется найти подарок с настроением — что-то личное, но не слишком "
+               "серьёзное. Вот идеи, которые обычно заходят на ура.",
+         keys=["cosmetics_set","candle_set","photo_book","handbag_woman","scented_bath_set",
+               "wall_art","gift_certificate","perfume"]),
+
+    dict(slug="podarki-synu", source="queue",
+         title="Подарки сыну: 15 идей на день рождения", 
+         description="Что подарить сыну на день рождения — идеи для разного возраста.",         category="Ребёнку",
+         intro="Подарок сыну хочется выбрать так, чтобы он действительно порадовал, а не пылился на "
+               "полке. Собрали идеи для разных возрастов и увлечений.",
+         keys=["kids_constructor","gaming_accessory","kids_scooter","board_game_kids","backpack_school",
+               "puzzle_3d","kids_book_set","camera_instant"]),
+
+    dict(slug="podarki-docheri", source="queue",
+         title="Подарки дочери: 15 идей на день рождения",
+         description="Что подарить дочери на день рождения — идеи для разного возраста.",
+         category="Ребёнку",
+         intro="Для дочери хочется подобрать подарок, который совпадёт с её увлечениями. Вот идеи "
+               "для разных возрастов — от малышек до подростков.",
+         keys=["kids_creativity_set","kids_book_set","night_light","board_game_kids","backpack_school",
+               "camera_instant","photo_frame_digital","handbag_woman"]),
+
+    dict(slug="podarki-na-den-rozhdeniya-muzhu", source="queue",
+         title="Подарки мужу на день рождения: 15 идей",
+         description="Что подарить мужу на день рождения — практичные и приятные идеи.",
+         category="Мужчине",
+         intro="Для мужа хочется подобрать подарок, который будет по-настоящему в тему — не просто "
+               "формальность. Вот идеи на день рождения.",
+         keys=["wireless_headphones","leather_wallet","grill_bbq","portable_speaker","watch_classic",
+               "gaming_accessory","tool_set","cocktail_set"]),
+
+    dict(slug="podarki-na-den-rozhdeniya-zhene", source="queue",
+         title="Подарки жене на день рождения: 15 идей",
+         description="Что подарить жене на день рождения — романтичные и практичные идеи.",
+         category="Женщине",
+         intro="День рождения жены — повод сделать по-настоящему приятный подарок. Собрали идеи "
+               "от романтичных до практичных.",
+         keys=["flower_box","perfume","handbag_woman","cosmetics_set","photo_book","scented_bath_set",
+               "makeup_mirror","wall_art"]),
 ]
 
 def main():
