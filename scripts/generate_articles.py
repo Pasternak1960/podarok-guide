@@ -586,7 +586,8 @@ ARTICLES = [
 
     dict(slug="podarki-synu", source="queue",
          title="Подарки сыну: 15 идей на день рождения", 
-         description="Что подарить сыну на день рождения — идеи для разного возраста.",         category="Ребёнку",
+         description="Что подарить сыну на день рождения — идеи для разного возраста.",   
+         category="Ребёнку",
          intro="Подарок сыну хочется выбрать так, чтобы он действительно порадовал, а не пылился на "
                "полке. Собрали идеи для разных возрастов и увлечений.",
          keys=["kids_constructor","gaming_accessory","kids_scooter","board_game_kids","backpack_school",
