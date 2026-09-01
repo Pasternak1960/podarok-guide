@@ -137,7 +137,8 @@ def build():
         verification_tags += f'<meta name="google-site-verification" content="{cfg["google_verification"]}">\n'
     if cfg.get("mitgo_verification"):
         verification_tags += f'<meta name="mitgo-verification" content="{cfg["mitgo_verification"]}">\n'
-
+    if cfg.get("takprodam_verification"):
+        verification_tags += f'<meta name="takprodam-verification" content="{cfg["takprodam_verification"]}">\n'
     articles = []
     if os.path.isdir(CONTENT_DIR):
         for fname in sorted(os.listdir(CONTENT_DIR)):
