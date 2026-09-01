@@ -4,8 +4,8 @@ on:
   push:
     branches: [main]
   schedule:
-    # Каждый понедельник в 06:00 UTC (09:00 МСК) — публикует одну статью из очереди
-    - cron: "0 6 * * 1"
+    # Пн/Ср/Пт в 06:00 UTC (09:00 МСК) — публикует по publish_per_run статей из очереди
+    - cron: "0 6 * * 1,3,5"
   workflow_dispatch: {}
 
 permissions:
