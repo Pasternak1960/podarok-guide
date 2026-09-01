@@ -223,7 +223,7 @@ ARTICLES = [
          title="Что подарить на 23 февраля: 16 идей для мужчин",
          description="Подборка подарков на 23 февраля: для коллег, друзей, папы, мужа или брата.",
          category="Праздники",
-         intro="23 февраля — повод порадовать не только военных, но и всех мужчин вокруг: коллег, друзей,"
+         intro="23 февраля — повод порадовать не только военных, но и всех мужчин вокруг: коллег, друзей, "
                "родственников. Вот идеи на любой бюджет.",
          keys=["thermo_mug","power_bank","tool_set","car_accessories","leather_wallet","grill_bbq",
                "gaming_accessory","portable_speaker","watch_classic","wireless_headphones",
