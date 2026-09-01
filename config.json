@@ -7,9 +7,9 @@
     "ozon": "https://ad.admitad.com/g/REPLACE_OZON_CAMPAIGN_ID/?ulp={url}",
     "wb": "https://ad.admitad.com/g/REPLACE_WB_CAMPAIGN_ID/?ulp={url}"
   },
-  "publish_per_run": 1,
+  "publish_per_run": 2,
   "yandex_verification": "",
   "google_verification": "",
   "mitgo_verification": "5336860d-bf47-4385-86e1-f50fb78e12e3",
-    "takprodam_verification": "655f6d91-8814-4a36-b393-32ca12e07b89"
+  "takprodam_verification": "655f6d91-8814-4a36-b393-32ca12e07b89"
 }
