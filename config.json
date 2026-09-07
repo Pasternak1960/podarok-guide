@@ -1,22 +1,23 @@
 {
-    "site_name": "ПодарокГид",
-    "site_url": "https://podarok-gid.ru",
-    "description": "Идеи и подборки подарков на любой случай, бюджет и характер получателя",
-    "author": "ПодарокГид",
-    "aff_networks": {
-          "ozon": "https://ad.admitad.com/g/REPLACE_OZON_CAMPAIGN_ID/?ulp={url}",
-          "wb": "https://ad.admitad.com/g/REPLACE_WB_CAMPAIGN_ID/?ulp={url}"
+  "site_name": "ПодарокГид",
+  "site_url": "https://podarok-gid.ru",
+  "description": "Идеи и подборки подарков на любой случай, бюджет и характер получателя",
+  "author": "ПодарокГид",
+  "aff_networks": {
+    "ozon": "https://ad.admitad.com/g/REPLACE_OZON_CAMPAIGN_ID/?ulp={url}",
+    "wb": "https://ad.admitad.com/g/REPLACE_WB_CAMPAIGN_ID/?ulp={url}"
+  },
+  "product_links": {
+    "ozon": {
+      "беспроводные наушники": "https://takprdm.ru/0W9NeG4N0rKAam0/?redirectTo=https%3A%2F%2Fozon.ru%2Fproduct%2F5680301128&erid=Y1jgkD6uB6jK1phqkTLTbNKVZP5j",
+      "термокружка": "https://tkprm.ru/_2VcF?erid=Y1jgkD6uB6jK1phqkTLTbNJUFtoa",
+      "пазл 1000 деталей": "https://takprdm.ru/0W9NeG8430DLAPK0/?redirectTo=https%3A%2F%2Fozon.ru%2Fproduct%2F5688377356&erid=Y1jgkD6uB6jK1phqkTLTbNJUFCJF"
     },
-    "product_links": {
-          "ozon": {
-                  "беспроводные наушники": "https://takprdm.ru/0W9NeG4N0rKAam0/?redirectTo=https%3A%2F%2Fozon.ru%2Fproduct%2F5680301128&erid=Y1jgkD6uB6jK1phqkTLTbNKVZP5j",
-                  "термокружка": "https://tkprm.ru/_2VcF?erid=Y1jgkD6uB6jK1phqkTLTbNJUFtoa"
-          },
-          "wb": {}
-    },
-    "publish_per_run": 2,
-    "yandex_verification": "",
-    "google_verification": "",
-    "mitgo_verification": "5336860d-bf47-4385-86e1-f50fb78e12e3",
-    "takprodam_verification": "655f6d91-8814-4a36-b393-32ca12e07b89"
+    "wb": {}
+  },
+  "publish_per_run": 2,
+  "yandex_verification": "",
+  "google_verification": "",
+  "mitgo_verification": "5336860d-bf47-4385-86e1-f50fb78e12e3",
+  "takprodam_verification": "655f6d91-8814-4a36-b393-32ca12e07b89"
 }
